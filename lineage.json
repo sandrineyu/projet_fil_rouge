@@ -1,7 +1,7 @@
 {
   "projet": "Atelier fil rouge M1 — Groupe D — fraude à l'ouverture de compte",
   "execution": {
-    "date_execution": "2026-10-07T15:05:08+00:00",
+    "date_execution": "2026-10-08T20:51:16+00:00",
     "python": "3.12.13",
     "pandas": "3.0.6",
     "systeme": "macOS-26.3.1-arm64-arm-64bit"
@@ -18,7 +18,7 @@
       "fichier": "Base.csv",
       "methode_acces": "Téléchargement manuel depuis Kaggle",
       "version": "1",
-      "date_recuperation": "2026-10-07T15:05:04+00:00",
+      "date_recuperation": "2026-10-08T20:51:11+00:00",
       "sha256": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
       "taille_octets": 213427735,
       "licence": "CC BY-NC-SA 4.0",

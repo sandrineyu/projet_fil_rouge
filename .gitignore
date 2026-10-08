@@ -1,0 +1,4 @@
+Base.csv
+base.csv
+data/raw/
+data/processed/base_clean.parquet
