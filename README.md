@@ -9,5 +9,5 @@
 * **Traçabilité (linéage j.son)** 
 
 ## Instructions pour lancer le code:
-1. Placer le fichier `Base.csv` téléchargé depuis Kaggle dans le dossier `data/raw/`
+1. Placer le fichier `Base.csv` téléchargé depuis Kaggle
 2. Ouvrir `groupeD_extraction.ipynb` et exécuter `Kernel > Restart & Run All`
