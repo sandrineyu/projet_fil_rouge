@@ -1,58 +1,29 @@
-# Projet fil rouge : Groupe D — Détection de la fraude à l'ouverture de compte
+# Projet fil rouge : Groupe D
 
-**Module 1 : Data Canvas, extraction et traçabilité des données**
+MBA 2 Data & BI, Epitech. Module 1 : fraude à l'ouverture de compte.
 
 ## Contenu du dépôt
 
-- **Data Canvas & cadrage** : cadrage du projet et description du besoin (PDF)
-- **Notebook d'extraction** : code d'extraction et de contrôle qualité des données
-- **Slides de présentation** : support de présentation du module (PDF)
-- **Traçabilité** : lignage des données (`lineage.json`), généré par le notebook
+- `groupeD_extraction.ipynb` : notebook d'extraction et de contrôle qualité
+- `lineage.json` : journal de traçabilité des données (généré par le notebook)
+- `docs/` : Data Canvas et slides en PDF
+- `data/processed/` : fichiers produits par le notebook (dictionnaire des variables, rapport qualité)
 
-## Structure du dépôt
-
-```
-projet_fil_rouge/
-├── README.md
-├── notebooks/
-│   └── groupeD_extraction.ipynb
-├── docs/
-│   ├── Data Canvas (groupe D).pdf
-│   └── Slides (groupe D).pdf
-└── outputs/
-    ├── Base.csv                  (non versionné, voir « Données »)
-    ├── lineage.json
-    ├── rapport_qualite.json
-    └── dictionnaire_variables.csv
-```
-
-| Dossier | Rôle |
-|---|---|
-| `notebooks/` | Code source : le notebook qui produit les résultats |
-| `docs/` | Livrables rédigés : Data Canvas et slides |
-| `outputs/` | Fichiers de données et résultats : base, lignage, rapport qualité, dictionnaire des variables |
-
-## Données
-
-Le fichier `Base.csv` (environ 203 Mo) n'est **pas inclus dans le dépôt** : il dépasse la limite de taille de GitHub (100 Mo par fichier).
-
-1. Télécharger le jeu de données sur Kaggle : **[lien du dataset à compléter]**
-2. Vérifier que le fichier s'appelle exactement `Base.csv` (renommer si besoin)
-3. Le placer dans le dossier `outputs/`
-
-## Instructions pour lancer le code
+## Lancer le notebook
 
 1. Cloner le dépôt :
 ```bash
    git clone https://github.com/sandrineyu/projet_fil_rouge.git
    cd projet_fil_rouge
 ```
-2. Placer `Base.csv` dans `outputs/` (voir la section « Données »)
-3. Ouvrir `notebooks/groupeD_extraction.ipynb`
-4. Exécuter `Kernel > Restart & Run All`
+2. Installer les modules Python nécessaires (si besoin) :
+```bash
+   pip install pandas numpy pyarrow jupyter
+```
+3. Télécharger `Base.csv` (environ 213 Mo, trop volumineux pour GitHub) sur Kaggle :
+   https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips2022
+   puis le placer **à côté du notebook**, à la racine du dossier `projet_fil_rouge`
+4. Ouvrir `groupeD_extraction.ipynb` depuis ce dossier (Jupyter ou VS Code)
+5. Cliquer sur `Kernel > Restart & Run All`
 
-Les fichiers générés (`lineage.json`, `rapport_qualite.json`, `dictionnaire_variables.csv`) sont écrits dans `outputs/`.
-
-## Équipe
-
-Groupe D : **[noms des membres à compléter]**
+Les fichiers générés sont écrits dans `data/processed/` et `lineage.json` à la racine.
