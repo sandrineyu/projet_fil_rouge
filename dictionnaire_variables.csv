@@ -1,0 +1,40 @@
+variable,description,type,connue_au_depot,statut,dtype_final,nb_manquants,pct_manquants,nb_valeurs_distinctes
+fraud_bool,Demande frauduleuse (1) ou légitime (0),Binaire,Non (cible),Cible,int8,0.0,0.0,2.0
+income,"Revenu déclaré, en déciles (0,1 à 0,9)",Quantitative ordonnée,Oui,Garder — sensible,float64,0.0,0.0,9.0
+name_email_similarity,Similarité entre le nom et l'email (0 à 1),Quantitative continue,Oui,Garder,float64,0.0,0.0,998861.0
+prev_address_months_count,Ancienneté à l'adresse précédente (mois),Quantitative discrète,Oui,Garder,float64,712920.0,71.29,373.0
+current_address_months_count,Ancienneté à l'adresse actuelle (mois),Quantitative discrète,Oui,Garder,float64,4254.0,0.43,422.0
+customer_age,Âge par tranches de 10 ans,Qualitative ordinale,Oui,Garder — sensible,int64,0.0,0.0,9.0
+days_since_request,Délai depuis la création de la demande (jours),Quantitative continue,Oui,Garder,float64,0.0,0.0,989330.0
+intended_balcon_amount,Montant initial prévu,Quantitative continue,Oui,Garder,float64,742523.0,74.25,257137.0
+payment_type,Type de plan de paiement (anonymisé),Qualitative nominale,Oui,Garder,category,0.0,0.0,5.0
+zip_count_4w,Demandes avec le même code postal sur 4 semaines,Quantitative discrète,Oui,Garder,int64,0.0,0.0,6306.0
+velocity_6h,Rythme moyen de demandes sur 6 h,Quantitative continue,Oui,Garder,float64,0.0,0.0,998687.0
+velocity_24h,Rythme moyen de demandes sur 24 h,Quantitative continue,Oui,Garder,float64,0.0,0.0,998940.0
+velocity_4w,Rythme moyen de demandes sur 4 semaines,Quantitative continue,Oui,Garder,float64,0.0,0.0,998318.0
+bank_branch_count_8w,Demandes dans l'agence choisie sur 8 semaines,Quantitative discrète,Oui,Garder,int64,0.0,0.0,2326.0
+date_of_birth_distinct_emails_4w,Emails distincts pour la même date de naissance sur 4 semaines,Quantitative discrète,Oui,Garder,int64,0.0,0.0,40.0
+employment_status,Statut d'emploi (anonymisé),Qualitative nominale,Oui,Garder — proxy social,category,0.0,0.0,7.0
+credit_risk_score,Score de risque de crédit interne,Quantitative,À vérifier,À discuter (fuite possible),int64,0.0,0.0,551.0
+email_is_free,Domaine d'email gratuit,Binaire,Oui,Garder,int8,0.0,0.0,2.0
+housing_status,Statut de logement (anonymisé),Qualitative nominale,Oui,Garder — proxy social,category,0.0,0.0,7.0
+phone_home_valid,Téléphone fixe valide,Binaire,Oui,Garder,int8,0.0,0.0,2.0
+phone_mobile_valid,Téléphone mobile valide,Binaire,Oui,Garder,int8,0.0,0.0,2.0
+bank_months_count,Ancienneté du compte précédent (mois),Quantitative discrète,Oui,Garder,float64,253635.0,25.36,32.0
+has_other_cards,Détient d'autres cartes dans la banque,Binaire,Oui,Garder,int8,0.0,0.0,2.0
+proposed_credit_limit,Limite de crédit proposée,Quantitative discrète,À vérifier,À discuter (fuite possible),float64,0.0,0.0,12.0
+foreign_request,Demande depuis un pays différent de celui de la banque,Binaire,Oui,Garder,int8,0.0,0.0,2.0
+source,"Canal de la demande (INTERNET, TELEAPP)",Qualitative nominale,Oui,Garder,category,0.0,0.0,2.0
+session_length_in_minutes,Durée de la session (minutes),Quantitative continue,Oui,Garder,float64,2015.0,0.2,994886.0
+device_os,Système d'exploitation de l'appareil,Qualitative nominale,Oui,Garder,category,0.0,0.0,5.0
+keep_alive_session,Option « rester connecté » activée,Binaire,Oui,Garder,int8,0.0,0.0,2.0
+device_distinct_emails_8w,Emails distincts depuis le même appareil sur 8 semaines,Quantitative discrète,Oui,Garder,float64,359.0,0.04,3.0
+device_fraud_count,Demandes frauduleuses déjà faites depuis l'appareil,Quantitative discrète,À vérifier,Supprimée (constante),,,,
+month,Mois de la demande (0 à 7),Temporelle,Oui,Découpage uniquement,int8,0.0,0.0,8.0
+prev_address_months_count_manquant,Colonne créée par le notebook,Binaire,Oui,Créée,int8,0.0,0.0,2.0
+current_address_months_count_manquant,Colonne créée par le notebook,Binaire,Oui,Créée,int8,0.0,0.0,2.0
+bank_months_count_manquant,Colonne créée par le notebook,Binaire,Oui,Créée,int8,0.0,0.0,2.0
+session_length_in_minutes_manquant,Colonne créée par le notebook,Binaire,Oui,Créée,int8,0.0,0.0,2.0
+device_distinct_emails_8w_manquant,Colonne créée par le notebook,Binaire,Oui,Créée,int8,0.0,0.0,2.0
+intended_balcon_amount_manquant,Colonne créée par le notebook,Binaire,Oui,Créée,int8,0.0,0.0,2.0
+split,Colonne créée par le notebook,Qualitative nominale,Sans objet,Créée,category,0.0,0.0,2.0

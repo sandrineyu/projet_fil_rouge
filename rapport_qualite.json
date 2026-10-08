@@ -1,0 +1,79 @@
+{
+  "nb_lignes": 1000000,
+  "nb_colonnes": 32,
+  "nb_fraudes": 11029,
+  "taux_fraude_pct": 1.103,
+  "doublons_exacts": 0,
+  "nan_par_colonne": {},
+  "valeurs_moins_un": {
+    "prev_address_months_count": 712920,
+    "current_address_months_count": 4254,
+    "credit_risk_score": 488,
+    "bank_months_count": 253635,
+    "session_length_in_minutes": 2015,
+    "device_distinct_emails_8w": 359
+  },
+  "valeurs_negatives": {
+    "prev_address_months_count": 712920,
+    "current_address_months_count": 4254,
+    "intended_balcon_amount": 742523,
+    "velocity_6h": 44,
+    "credit_risk_score": 14445,
+    "bank_months_count": 253635,
+    "session_length_in_minutes": 2015,
+    "device_distinct_emails_8w": 359
+  },
+  "colonnes_constantes": [
+    "device_fraud_count"
+  ],
+  "par_mois": [
+    {
+      "month": 0,
+      "nb_demandes": 132440,
+      "nb_fraudes": 1500,
+      "taux_fraude": 1.133
+    },
+    {
+      "month": 1,
+      "nb_demandes": 127620,
+      "nb_fraudes": 1198,
+      "taux_fraude": 0.939
+    },
+    {
+      "month": 2,
+      "nb_demandes": 136979,
+      "nb_fraudes": 1198,
+      "taux_fraude": 0.875
+    },
+    {
+      "month": 3,
+      "nb_demandes": 150936,
+      "nb_fraudes": 1392,
+      "taux_fraude": 0.922
+    },
+    {
+      "month": 4,
+      "nb_demandes": 127691,
+      "nb_fraudes": 1452,
+      "taux_fraude": 1.137
+    },
+    {
+      "month": 5,
+      "nb_demandes": 119323,
+      "nb_fraudes": 1411,
+      "taux_fraude": 1.183
+    },
+    {
+      "month": 6,
+      "nb_demandes": 108168,
+      "nb_fraudes": 1450,
+      "taux_fraude": 1.341
+    },
+    {
+      "month": 7,
+      "nb_demandes": 96843,
+      "nb_fraudes": 1428,
+      "taux_fraude": 1.475
+    }
+  ]
+}
