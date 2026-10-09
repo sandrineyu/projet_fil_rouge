@@ -1,35 +1,60 @@
 {
-  "projet": "Atelier fil rouge M1 — Groupe D — fraude à l'ouverture de compte",
+  "projet": "Atelier fil rouge M1 - Groupe D - fraude à l'ouverture de compte",
   "execution": {
-    "date_execution": "2026-10-08T20:51:16+00:00",
+    "date_execution": "2026-10-09T17:29:11+00:00",
     "python": "3.12.13",
     "pandas": "3.0.6",
     "systeme": "macOS-26.3.1-arm64-arm-64bit"
   },
   "sources": [
     {
-      "nom": "Bank Account Fraud Dataset Suite (Feedzai, NeurIPS 2022) — Base.csv",
+      "nom": "Bank Account Fraud Dataset Suite (Feedzai, NeurIPS 2022) - Base.csv",
       "url": "https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips2022",
-      "identifiant_kaggle": "sgpjesus/bank-account-fraud-dataset-neurips2022",
-      "documentation": [
-        "https://github.com/feedzai/bank-account-fraud",
-        "https://github.com/feedzai/bank-account-fraud"
-      ],
-      "fichier": "Base.csv",
-      "methode_acces": "Téléchargement manuel depuis Kaggle",
+      "documentation": "https://github.com/feedzai/bank-account-fraud",
+      "methode_acces": "Téléchargement manuel de Base.csv sur Kaggle, découpé en 3 parties pour GitHub",
       "version": "1",
-      "date_recuperation": "2026-10-08T20:51:11+00:00",
-      "sha256": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
-      "taille_octets": 213427735,
+      "date_recuperation": "2026-10-08",
       "licence": "CC BY-NC-SA 4.0",
+      "sha256_base_csv_reference": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
+      "fichiers": [
+        {
+          "fichier": "dataset_part1.csv",
+          "sha256": "ecdd85cfd84104e8a9dcc08872978ccc5a9c72d3c17d3f8a184b6fa4abec08f5"
+        },
+        {
+          "fichier": "dataset_part2.csv",
+          "sha256": "8cc7fa37f07ddd169784d8fb3eb4e708d01866a4da3120403ee7dba0521b8430"
+        },
+        {
+          "fichier": "dataset_part3.csv",
+          "sha256": "8dccb2d20927e1c114d9752d0ed6e9a85dc08c58e5b9f7136858fe550c68067e"
+        }
+      ],
+      "sha256_parties_recollees": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
       "nature": "Données générées à partir d'un jeu réel anonymisé (pas de données réelles)"
     }
   ],
+  "controles_qualite": {
+    "nb_lignes": 1000000,
+    "nb_colonnes": 32,
+    "nb_fraudes": 11029,
+    "taux_fraude_pct": 1.103,
+    "doublons_exacts": 0,
+    "nan_bruts": 0,
+    "valeurs_moins_un": {
+      "prev_address_months_count": 712920,
+      "current_address_months_count": 4254,
+      "credit_risk_score": 488,
+      "bank_months_count": 253635,
+      "session_length_in_minutes": 2015,
+      "device_distinct_emails_8w": 359
+    }
+  },
   "transformations": [
     {
       "etape": 1,
       "nom": "doublons",
-      "description": "Suppression des lignes entièrement identiques (pas d'identifiant disponible)",
+      "description": "Suppression des lignes entièrement identiques",
       "lignes_avant": 1000000,
       "lignes_apres": 1000000,
       "colonnes_avant": 32,
@@ -38,7 +63,7 @@
     {
       "etape": 2,
       "nom": "recodage_manquants",
-      "description": "-1 (ou valeurs négatives pour intended_balcon_amount) remplacés par NaN, avec une colonne indicatrice <col>_manquant",
+      "description": "-1 (négatifs pour intended_balcon_amount) -> NaN, colonne <col>_manquant ajoutée",
       "lignes_avant": 1000000,
       "lignes_apres": 1000000,
       "colonnes_avant": 32,
@@ -67,7 +92,7 @@
     {
       "etape": 4,
       "nom": "typage",
-      "description": "Variables nominales en category, binaires en int8 ; customer_age (tranches) laissée numérique mais documentée comme ordinale",
+      "description": "Variables nominales en category, binaires en int8",
       "lignes_avant": 1000000,
       "lignes_apres": 1000000,
       "colonnes_avant": 37,
@@ -76,28 +101,18 @@
     {
       "etape": 5,
       "nom": "decoupage_temporel",
-      "description": "Ajout de la colonne split : train = mois [0, 1, 2, 3, 4, 5], test = mois [6, 7]",
+      "description": "Colonne split : train = mois [0, 1, 2, 3, 4, 5], test = mois 6 et 7",
       "lignes_avant": 1000000,
       "lignes_apres": 1000000,
-      "colonnes_avant": 37,
+      "colonnes_avant": 38,
       "colonnes_apres": 38
     }
   ],
   "sorties": [
     {
-      "fichier": "base_clean.parquet",
-      "sha256": "cac0d277951db8e80c9e376402609833b5da948a1935b3757ca6598c78e74ee2",
-      "taille_octets": 63744983
-    },
-    {
-      "fichier": "dictionnaire_variables.csv",
-      "sha256": "b34bd6ba46540b2b23a0590a1d43732be11ec2b1cc0882cfc6c5e590ffbf8082",
-      "taille_octets": 4411
-    },
-    {
-      "fichier": "rapport_qualite.json",
-      "sha256": "f6a43049cdd0852795ee0bd307a331c3972b045df4c90dafe4b35c3776a8853a",
-      "taille_octets": 1693
+      "fichier": "data/processed/base_clean.parquet",
+      "sha256": "526b781797d4b8d5fe0109f4e0a4ebe4580cc4b94c297c00f2f711de7b70785d",
+      "taille_octets": 63745813
     }
   ]
 }
