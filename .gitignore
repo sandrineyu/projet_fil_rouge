@@ -2,3 +2,7 @@ Base.csv
 base.csv
 data/raw/
 data/processed/base_clean.parquet
+*.duckdb
+*.duckdb.wal
+data/dataset.csv
+.DS_Store
