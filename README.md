@@ -27,3 +27,24 @@ MBA 2 Data & BI, Epitech. Module 1 : fraude à l'ouverture de compte.
 5. Cliquer sur `Kernel > Restart & Run All`
 
 Les fichiers générés sont écrits dans `data/processed/` et `lineage.json` à la racine.
+
+## Base DuckDB
+
+Le jeu de données brut est découpé en 3 fichiers (`data/dataset_part1.csv` à `part3.csv`).
+Le script `src/build_duckdb.py` les fusionne et construit une base DuckDB interrogeable en SQL :
+
+```bash
+pip install duckdb
+python src/build_duckdb.py
+```
+
+Sorties (non versionnées) :
+- `data/dataset.csv` : les 3 parties fusionnées (1 000 000 lignes, 32 colonnes)
+- `data/fraud.duckdb` : table `applications` (mêmes colonnes + `source_file`, le fichier d'origine)
+
+Exemple de requête :
+```python
+import duckdb
+con = duckdb.connect("data/fraud.duckdb", read_only=True)
+con.sql("SELECT month, count(*) AS demandes, avg(fraud_bool) AS taux_fraude FROM applications GROUP BY month ORDER BY month").show()
+```

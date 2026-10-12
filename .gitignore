@@ -6,3 +6,4 @@ data/processed/base_clean.parquet
 *.duckdb.wal
 data/dataset.csv
 .DS_Store
+.venv/
