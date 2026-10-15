@@ -7,3 +7,4 @@ data/processed/base_clean.parquet
 data/dataset.csv
 .DS_Store
 .venv/
+data/dataset_clean.csv
