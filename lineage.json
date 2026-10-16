@@ -1,36 +1,27 @@
 {
   "projet": "Atelier fil rouge M1 - Groupe D - fraude à l'ouverture de compte",
   "execution": {
-    "date_execution": "2026-10-09T17:29:11+00:00",
-    "python": "3.12.13",
-    "pandas": "3.0.6",
-    "systeme": "macOS-26.3.1-arm64-arm-64bit"
+    "date_execution": "2026-10-16T14:36:16+00:00",
+    "python": "3.14.3",
+    "pandas": "3.0.0",
+    "systeme": "macOS-26.3.1-arm64-arm-64bit-Mach-O"
   },
   "sources": [
     {
       "nom": "Bank Account Fraud Dataset Suite (Feedzai, NeurIPS 2022) - Base.csv",
       "url": "https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips2022",
       "documentation": "https://github.com/feedzai/bank-account-fraud",
-      "methode_acces": "Téléchargement manuel de Base.csv sur Kaggle, découpé en 3 parties pour GitHub",
+      "methode_acces": "Téléchargement manuel de Base.csv sur Kaggle, placé à la racine du projet.",
       "version": "1",
       "date_recuperation": "2026-10-08",
       "licence": "CC BY-NC-SA 4.0",
       "sha256_base_csv_reference": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
       "fichiers": [
         {
-          "fichier": "dataset_part1.csv",
-          "sha256": "ecdd85cfd84104e8a9dcc08872978ccc5a9c72d3c17d3f8a184b6fa4abec08f5"
-        },
-        {
-          "fichier": "dataset_part2.csv",
-          "sha256": "8cc7fa37f07ddd169784d8fb3eb4e708d01866a4da3120403ee7dba0521b8430"
-        },
-        {
-          "fichier": "dataset_part3.csv",
-          "sha256": "8dccb2d20927e1c114d9752d0ed6e9a85dc08c58e5b9f7136858fe550c68067e"
+          "fichier": "Base.csv",
+          "sha256": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809"
         }
       ],
-      "sha256_parties_recollees": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
       "nature": "Données générées à partir d'un jeu réel anonymisé (pas de données réelles)"
     }
   ],
@@ -111,7 +102,7 @@
   "sorties": [
     {
       "fichier": "data/processed/base_clean.parquet",
-      "sha256": "526b781797d4b8d5fe0109f4e0a4ebe4580cc4b94c297c00f2f711de7b70785d",
+      "sha256": "9555de3f176b2c6810bb7ef3beeb2a0602772a68f792f8b186152446545da794",
       "taille_octets": 63745813
     }
   ]
