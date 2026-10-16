@@ -8,3 +8,4 @@ data/dataset.csv
 .DS_Store
 .venv/
 data/dataset_clean.csv
+data/*.csv
